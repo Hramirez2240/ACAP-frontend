@@ -6,7 +6,7 @@ import * as msal from "@azure/msal-browser";
 var authority = EnvSettings.AD_AUTHORITY;
 var tenantId = EnvSettings.AD_TENANT_ID;
 var scope = EnvSettings.AD_SCOPE;
-authority = authority.replace("{your_tenant_id}", tenantId);
+//authority = authority.replace("{your_tenant_id}", tenantId);
 const msalConfig = {
     auth: {
         clientId: EnvSettings.AD_CLIENT_ID,
@@ -53,10 +53,10 @@ function CallForLoginOrHandleRedirect(afterLoginSucceded) {
 }
 
 function getSilentToken() {
-    let username = localStorage.getItem("ad_username"); 
+    let username = localStorage.getItem("username"); 
     var currentAccount = msalInstance.getAccountByUsername(username);
     var silentRequest = {
-        scopes: [scope, "Mail.Read"], // scope, 
+        scopes: [scope], // scope, 
         account: currentAccount,
         forceRefresh: false,
         redirectUri: window.location.origin

@@ -2,18 +2,14 @@ import SideBar from "./SideBar";
 import axiosClient from '../config/axios'
 import { useState } from "react";
 import InputMask from 'react-input-mask';
-import Modal from '@material-ui/core/Modal';
+//import Modal from '@material-ui/core/Modal';
+import Swal from "sweetalert2";
 
 export default function Cedula(){
 
     const [img, setImg] = useState("");
     const [cedula, setCedula] = useState("");
     const [showImg, setShowImg] = useState("none");
-    const [open, setOpen] = useState(false);
-
-    const handleClose = () => {
-        setOpen(false);
-    }
 
     const handleInput = event => {
         setCedula(event.target.value);
@@ -22,7 +18,11 @@ export default function Cedula(){
     const handleClick = async() => {
         const result = await axiosClient.get("Power/Get/" + cedula);
         if(result.data.length === 0){
-            setOpen(true);
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'Cédula no encontrada'
+            });
             setShowImg("none");
         }
 
@@ -56,26 +56,6 @@ export default function Cedula(){
                     </div>
                 </div>
             </div>
-            <Modal
-            onClose={handleClose}
-            open={open}
-            style={{
-            position: 'absolute',
-            border: '2px solid #000',
-            bottom: "250px",
-            left: "250px",
-            borderRadius: "15px",
-            backgroundColor: '#fff',
-            height: "80px",
-            width: "500px",
-            margin: "auto",
-            textAlign: "center",
-            color: "#fff"
-            }}
-            >
-                <h2>No se encuentra la cédula ingresada</h2>
-            </Modal>
-      
         </div>
     );
 }
