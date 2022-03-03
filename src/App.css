@@ -1,5 +1,8 @@
 .App {
-  text-align: center;
+  
+  display: flex;
+  height: 100vh;
+  background-color: #eee;
 }
 
 .App-logo {
@@ -35,4 +38,192 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.sideBarContainer{
+  background-color: #fff;
+}
+
+.CibaoLogo-img{
+  width: 300px;
+  height: 150px;
+}
+
+.inputSearch{
+  border: none;
+  font-size: 17px;
+  margin: 5px;
+  width: 220px;
+  height: 30px;
+}
+
+.inputSearch:focus{
+  outline: none;
+}
+
+.containerInputSearch{
+  border: 2px solid black;
+  border-radius: 5px;
+  margin: 50px 20px;
+  width: 260px;
+}
+
+.searchIcon, .homeIcon, .rightIcon{
+  height: 2vmin;
+  margin: 0 3px;
+}
+
+.homeIcon{
+  height: 2.5vmin;
+}
+
+.rightIcon{
+  margin: 0 0 0 5px;
+}
+
+.inicioTitle, .busquedaTitle{
+  display: inline-block;
+  margin: 15px;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.inicioTitle{
+  color: blue;
+  margin: 0 16px;
+  width: 210px;
+  text-decoration: none;
+}
+
+.busquedaTitle{
+  color: blue;
+}
+
+.lineOne{
+  margin: 5px 18px 16px 18px;
+}
+
+.lineThree{
+  border: 2px solid black;
+  margin-left: 25px;
+  margin-right: 5px;
+}
+
+.links{
+  margin-left: 25px;
+}
+
+.links a{
+  text-decoration: none;
+  display: none;
+  color: #009;
+  margin: 5px;
+  font-weight: 700;
+}
+
+.dropdown-links:hover{
+  background-color: #eee;
+}
+
+.dropdown-links:hover .links a{
+  display: block;
+}
+
+.links a:visited{
+  color: #009;
+}
+
+.titleContainer{
+  background-color: #0a0a41;
+  height: 80px;
+  width: 80vw;
+  display: block;
+}
+
+.titleContainer h2{
+  color: #fff;
+  margin-left: 50px;
+  margin-top: 20px;
+  margin-bottom: 0;
+  text-align: center;
+  font-size: 30px;
+}
+
+.contentContainer{
+  width: 70vw;
+  height: 76vh;
+  border-radius: 7px;
+  margin: 0 0 0 20px;
+}
+
+.cedulaContainer{
+  margin: 30px 0 0 20px;
+}
+
+.cedulaContainer label{
+  font-weight: bold;
+  font-size: 22px;
+  margin-right: 10px;
+  padding-top: 15px;
+}
+
+.cedulaContainer input{
+  margin-right: 20px;
+  width: 400px;
+  display: inline-block;
+}
+
+.aleatoriaContainer{
+  margin: 70px 0;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.aleatoriaContainer button{
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 5px;
+  margin: 10px 5px;
+  padding: 7px;
+  width: 210px;
+}
+
+.aleatoriaContainer .btn{
+  background-color: #fff;
+  color: #0a0a41;
+  border: 1px solid #0a0a41;
+}
+
+.aleatoriaContainer .btn:hover{
+  background-color: #0a0a41;
+  color: #fff;
+}
+
+.cedulaContainer .btn{
+  background-color: #fff;
+  color: #0a0a41;
+  border: 1px solid #0a0a41;
+}
+
+.cedulaContainer .btn:hover{
+  background-color: #0a0a41;
+  color: #fff;
+}
+
+.contentImg{
+  width: 1000px; 
+  margin: 0 auto;
+}
+
+.imgContainer{
+  margin: 60px 0 40px 0;
+  width: 1000px;
+}
+
+.imgContainer img{
+  width: 450px;
+  height: 350px;
+  margin: 25px;
+  border-radius: 10px;
 }

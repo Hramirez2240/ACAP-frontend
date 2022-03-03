@@ -1,23 +1,26 @@
-import logo from './logo.svg';
+import { useEffect } from 'react';
 import './App.css';
+import SideBar from './components/SideBar';
+import Title from './components/Title';
+import CallForLoginOrHandleRedirect from './config/azure-ad/settings';
+import axiosClient from './config/axios';
+import Cedula from './components/Cedula';
 
 function App() {
+  // useEffect(() => {
+  //   (async function mounted(){
+  //     await CallForLoginOrHandleRedirect(onLoggedIn);
+  //   })();
+  // }, []);
+
+  // const onLoggedIn = async (tokenResponse) => {
+  //   axiosClient.defaults.headers.common['Authorization'] = `Bearer ${tokenResponse}`;
+  //   localStorage.setItem("token", tokenResponse.accessToken);
+  // };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Cedula />
     </div>
   );
 }

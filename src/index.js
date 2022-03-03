@@ -2,12 +2,20 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import Cedula from './components/Cedula';
+import Aleatoria from './components/Aleatoria';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    <BrowserRouter>
+      <Routes>
+        <Route path="*" element={<App />} />
+        <Route exact path="/" element={<App />} />
+        <Route exact path="/cedula" element={<Cedula />} />
+        <Route exact path="/aleatoria" element={<Aleatoria />} />
+      </Routes>
+    </BrowserRouter>,
   document.getElementById('root')
 );
 
